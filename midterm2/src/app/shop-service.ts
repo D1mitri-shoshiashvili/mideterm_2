@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { shopItem } from './models/shop-item';
+import { v4 } from 'uuid';
+
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +31,11 @@ export class ShopService {
   
   getItems(){
     return this.items;
+  }
+
+  addItem(item: shopItem){
+    item.id=v4();
+    this.items.push(item);
+    return item.id;
   }
 }

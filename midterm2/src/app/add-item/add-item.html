@@ -4,15 +4,38 @@
 <form [formGroup]="form">
     <div class="class-item">
         <input type="text" formControlName="modelName" placeholder="Model">
+        @if(modelName.invalid && modelName.touched){
+            <div class="errr">
+                @if(modelName.errors?.['required']){
+                    <div>this fild is required</div>
+                }
+                @if(modelName.errors?.['minlength']){
+                    <div>Min length is 3 charachter</div>
+                }
+                @if(modelName.errors?.['maxlength']){
+                    <div>Max length is 50 charachter</div>
+                }                
+            </div>
+        }
     </div>
     <div class="class-item">
           <input type="number" formControlName="price" placeholder="Price">
+          @if(price.invalid && price.touched){
+            <div class="error">
+                @if(price.errors?.['required']){
+                    <div>this field is required</div>
+                }
+                @if(price.errors?.['min']){
+                    <div>Price should be >= 0</div>
+                }
+            </div>
+          }
     </div>
     <div class="class-item">
         <label for="chk-isAvaliable">is Avaliable</label>
         <input type="checkbox" formControlName="isAvaliable" id="chk-isAvaliable">
     </div>
     <div class="form-item">
-        <button type="submit">Add</button>
+        <button type="submit" [disabled]="form.invalid">Add</button>
     </div>
 </form>

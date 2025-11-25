@@ -21,4 +21,12 @@ export class AddItem {
     ]),
     isAvaliable: new FormControl(false)
   });
+
+  get modelName(){
+    return this.form.controls.modelName;
+  }
+
+  get price(){
+    return this.form.controls.price;
+  }
 }

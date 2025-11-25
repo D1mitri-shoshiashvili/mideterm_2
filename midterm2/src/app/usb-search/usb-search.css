@@ -1,0 +1,14 @@
+.out-of-stock{
+    background-color: yellow;
+}
+
+.search-results{
+    border-collapse: collapse;
+}
+
+.search-results th, .search-results td{
+    padding: 5px;
+    border: solid 1px;
+    text-align: center;
+}
+

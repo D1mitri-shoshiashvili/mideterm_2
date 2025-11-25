@@ -1,0 +1,28 @@
+<h3>Usb flash drive search</h3>
+
+<div class="search-results">
+    <thead>
+        <th>Id</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Is avaliable</th>
+    </thead>
+    <tbody>
+        @for(item of searchResults(); track item.id){
+            <tr [class]="{'out-of-stock': !item.isAvaliable}">
+                <td>{{item.id}}</td>
+                <td>{{item.modelName}}</td>
+                <td>
+                    @if(item.isAvaliable){
+                        <span>{{item.price}}</span>
+                    }@else {
+                        N/A
+                    }
+                </td>
+                <td>
+                    {{item.isAvaliable? 'YES':'NO'}}
+                </td>
+            </tr>
+        }
+    </tbody>
+</div>

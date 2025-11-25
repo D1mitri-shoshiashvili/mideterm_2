@@ -30,10 +30,16 @@ export class UsbSearch implements OnInit{
     let filterItems = this.shopService.filterItems({
       model: filter.model,
       priceFrom: filter.priceFrom,
-      priceTo: filter.priceTo,
+      priceTo: filter.priceTo
     })
 
     this.searchResults.set(filterItems);
+  }
+
+  onReset(){
+    this.searchForm.reset();
+    let allItems = this.shopService.getItems();
+    this.searchResults.set(allItems);
   }
 
 }

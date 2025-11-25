@@ -1,0 +1,18 @@
+<h3>Add USB flash drive</h3>
+
+
+<form [formGroup]="form">
+    <div class="class-item">
+        <input type="text" formControlName="modelName" placeholder="Model">
+    </div>
+    <div class="class-item">
+          <input type="number" formControlName="price" placeholder="Price">
+    </div>
+    <div class="class-item">
+        <label for="chk-isAvaliable">is Avaliable</label>
+        <input type="checkbox" formControlName="isAvaliable" id="chk-isAvaliable">
+    </div>
+    <div class="form-item">
+        <button type="submit">Add</button>
+    </div>
+</form>

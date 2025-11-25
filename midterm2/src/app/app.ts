@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { UsbSearch } from './usb-search/usb-search';
+import { AddItem } from './add-item/add-item';
 
 @Component({
   selector: 'app-root',
-  imports: [UsbSearch],
+  imports: [UsbSearch, AddItem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

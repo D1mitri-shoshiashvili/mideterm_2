@@ -26,4 +26,8 @@ export class ShopService {
     },
   ];
 
+  
+  getItems(){
+    return this.items;
+  }
 }

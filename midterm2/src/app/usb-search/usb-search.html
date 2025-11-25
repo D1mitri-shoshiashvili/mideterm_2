@@ -1,5 +1,27 @@
 <h3>Usb flash drive search</h3>
 
+
+<form [formGroup]="searchForm">
+    <div class="search-filter">
+        <div class="filter-item">
+            <input type="text" formControlName="model" placeholder="Model">
+        </div>
+        <div class="filter-item">
+            <input type="number" formControlName="priceFrom" placeholder="Price from">
+        </div>
+        <div class="filter-item">
+            <input type="number" formControlName="priceTo" placeholder="Price to">
+        </div>
+        <div class="filter-item">
+            <button>Search</button>
+        </div>
+        <div class="filter-item">
+            <button>Reset</button>
+        </div>
+    </div>
+</form>
+
+
 <div class="search-results">
     <thead>
         <th>Id</th>

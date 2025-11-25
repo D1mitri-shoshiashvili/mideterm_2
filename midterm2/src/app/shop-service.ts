@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { shopItem } from './models/shop-item';
 import { v4 } from 'uuid';
-
+import { ItemFilter } from './models/item-filter';
 
 @Injectable({
   providedIn: 'root',
@@ -38,4 +38,22 @@ export class ShopService {
     this.items.push(item);
     return item.id;
   }
+
+  filterItems(filter: ItemFilter){
+    let result = this.items;
+    if(filter.model !==null && filter.model !== undefined && filter.model !==''){
+      result = result.filter(c=> c.modelName.includes(filter.model!));
+    }
+
+    if(filter.priceFrom !==null && filter.priceFrom !== undefined){
+      result = result.filter(c=> c.price >= filter.priceFrom!);
+    }
+
+    if(filter.priceTo !==null && filter.priceTo !== undefined){
+      result = result.filter(c=> c.price >= filter.priceTo!);
+    }
+
+    return result;
+  }
 }
+
